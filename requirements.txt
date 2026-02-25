@@ -1,0 +1,4 @@
+# Warehouse Management Tool Dependencies
+python-dotenv>=1.0.0
+PyYAML>=6.0
+portalocker>=3.2.0

@@ -1,0 +1,27 @@
+# Warehouse Management Tool Configuration
+# Logging Configuration
+logging:
+  version: 1
+  formatters:
+    simpleFormatter:
+      format: "%(asctime)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s"
+      datefmt: "%Y-%m-%d %H:%M:%S"
+  handlers:
+    consoleHandler:
+      class: logging.StreamHandler
+      formatter: simpleFormatter
+      stream: ext://sys.stdout
+    fileHandler:
+      class: logging.handlers.TimedRotatingFileHandler
+      formatter: simpleFormatter
+      filename: logs/main_system_logs.log
+      when: "midnight" # Rotate the log file every midnight
+      interval: 1 # Interval is 1 day
+      backupCount: 30 # Optional: Set this to keep 30 days of logs, older logs are deleted.
+  root:
+    level: INFO
+    handlers: [fileHandler]
+
+warehouse:
+  # Path to the state file (relative to project root)
+  state_file: !Parse ["os.environ.get('WAREHOUSE_STATE_FILE')"]
