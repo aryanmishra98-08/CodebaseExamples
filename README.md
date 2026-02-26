@@ -43,7 +43,7 @@ This warehouse management tool provides a complete solution for tracking invento
 
 ## Assignment
 
-### Code Assignment — Rapyuta Robotics (Backend Software Engineer)
+### Code Assignment
 
 #### Overview
 
@@ -67,7 +67,7 @@ This tool was built as a take-home assignment to assess the ability to design an
 **Supported Operations:**
 
 1. **Register / Deregister Locations**
-   - Register a new location by unique name. Fails if already exists.
+   - Register a new location by a unique name. Fails if already exists.
    - Deregister only if the location exists **and** has no inventory. Fails otherwise.
 
 2. **Increment Inventory** — Add a specified quantity of an item to a location. Creates the item if it doesn't exist. Fails if the location doesn't exist.
@@ -147,7 +147,7 @@ INVENTORY OBSERVE LA
 A ZIP file containing:
 - Source code and all files needed to run it (e.g., `pyproject.toml`, `Dockerfile`)
 - A `README.md` covering:
-  - Design decisions (data structures, persistence format, dependencies and rationale)
+  - Design decisions (data structures, persistence format, dependencies, and rationale)
   - Instructions on how to run the code
 
 ---
@@ -1366,50 +1366,6 @@ except Exception as e:
 
 ---
 
-## Future Enhancements
-
-While the current implementation meets all requirements, here are potential improvements for production use:
-
-### Scalability Improvements
-
-| Current Limitation | Proposed Enhancement | Benefit |
-|--------------------|---------------------|---------|
-| JSON file may not scale to millions of items | Migrate to SQLite or PostgreSQL | Better performance for large datasets |
-| File locking has timeout limits | Implement queuing system | Handle high concurrency better |
-| Single file limits distributed deployment | Add network-based locking (Redis) | Support distributed systems |
-
-### Feature Additions
-
-| Feature | Description | Use Case |
-|---------|-------------|----------|
-| **User Authentication** | Add login system with user roles | Multi-user warehouse operations |
-| **Batch Operations** | Support multiple commands in one transaction | Atomic multi-step operations |
-| **Item Metadata** | Track item names, descriptions, categories | Better inventory management |
-| **Location Hierarchy** | Support nested locations (warehouse > aisle > shelf) | Complex warehouse layouts |
-| **Audit Trail** | Track all changes with timestamps and user info | Compliance and debugging |
-| **Search/Query** | Find items across all locations | Inventory location tracking |
-| **Export/Import** | CSV/Excel import/export | Data migration and reporting |
-
-### Interface Improvements
-
-| Enhancement | Description | Benefit |
-|-------------|-------------|---------|
-| **Web UI** | Browser-based interface | Easier for non-technical users |
-| **REST API** | HTTP API for integration | Third-party system integration |
-| **TUI** | Terminal UI with menus | Better interactive experience |
-| **GraphQL API** | Flexible query interface | Complex data retrieval |
-
-### Operational Enhancements
-
-| Feature | Description | Benefit |
-|---------|-------------|---------|
-| **Metrics Dashboard** | Real-time statistics and graphs | Operational visibility |
-| **Alerts** | Notifications for low stock, errors | Proactive management |
-| **Backup/Restore** | Automated state backups | Disaster recovery |
-| **Health Checks** | System health monitoring | Reliability |
-
----
-
 ## Troubleshooting
 
 ### Common Issues and Solutions
@@ -1546,17 +1502,9 @@ If you encounter issues not covered here:
 
 ---
 
-## Acknowledgments
-
-### Thank You Note
-
-This project was developed as part of a assessment for **Rapyuta Robotics**. I would like to express my gratitude for the opportunity to work on this interesting and challenging problem.
-
----
-
 ### Final Notes
 
-This warehouse management tool demonstrates backend engineering principles including state management, concurrency control, error handling, and system design. While designed as an assignment solution, the architecture is production-ready and could be extended for real-world use cases.
+This warehouse management tool demonstrates backend engineering principles, including state management, concurrency control, error handling, and system design. While designed as an assignment solution, the architecture is production-ready and could be extended for real-world use cases.
 
 The focus throughout development was on **correctness**, **reliability**, and **clarity** - ensuring the system does exactly what it should, handles errors gracefully, and is easy to understand and maintain.
 
