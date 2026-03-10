@@ -1511,3 +1511,7 @@ The focus throughout development was on **correctness**, **reliability**, and **
 Thank you for reviewing this project!
 
 ---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
